@@ -39,7 +39,6 @@ class Agent():
         self.lr_critic = lr_critic           # learning rate of the critic
         self.weight_decay = weight_decay     # L2 weight decay
         self.seed = random.seed(random_seed)
-
         # Actor Network (w/ Target Network)
         self.actor_local = Actor(state_size, action_size, random_seed).to(device)
         self.actor_target = Actor(state_size, action_size, random_seed).to(device)
@@ -59,7 +58,7 @@ class Agent():
         """Save experience in replay memory, and use random sample from buffer to learn."""
         # Save experience / reward
         self.memory.add(state, action, reward, next_state, done)
-
+        
         # Learn, if enough samples are available in memory
         if len(self.memory) > self.batch_size:
             experiences = self.memory.sample()
