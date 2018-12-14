@@ -40,3 +40,16 @@ The observation space consists of 33 variables corresponding to position, rotati
 
 ## Code
 
+The code is split between three files and Report.ipynb
+
+### agent.py
+
+Contains the definition of the DDPG actor. It sets up the 4 network the Actor's target and local network and the critics target and local network. 
+
+### model.py
+
+Defines the two model achitecture (further details in Report.ipynb on them)
+
+### replay_buffer.py
+
+Implements a experience store for experience replay. 
